@@ -47,7 +47,17 @@ public class test_this_month
         int index = calendar1.get(Calendar.DAY_OF_WEEK) - 1;
         char[] title = {'日', '一', '二', '三', '四', '五', '六'}; // 存放曰历的头部
         int[][] daysArray = new int[6][7];// 存放日历的数据
-        int daysInMonth = 31; // 该月的天数
+        int[] daysInMonth;
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        {
+            daysInMonth = new int[]{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // 该月的天数,闰年
+            System.out.println("今年为闰年");
+        }
+        else
+        {
+            daysInMonth = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // 该月的天数
+            System.out.println("今年为平年");
+        }
         int day1 = 1; // 自动增长
         for (int i = index; i < 7; i++)
         {
@@ -60,7 +70,7 @@ public class test_this_month
             for (int j = 0; j < 7; j++)
             {
                 // 如果当前day表示的是本月最后一天，则停止向数组中继续赋值
-                if (day1 > daysInMonth)
+                if (day1 > daysInMonth[month - 1])
                 {
                     i = 6;
                     break;

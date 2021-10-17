@@ -28,10 +28,10 @@ public class test
         long endTime = System.nanoTime(); //获取结束时间
         if ((endTime - startTime) < 1000000)
         {
-             double final_runtime;
-             final_runtime = (endTime - startTime);
-             final_runtime = final_runtime / 1000;
-             System.out.println("算法运行时间： " + final_runtime + "微秒");
+            double final_runtime;
+            final_runtime = (endTime - startTime);
+            final_runtime = final_runtime / 1000;
+            System.out.println("算法运行时间： " + final_runtime + "微秒");
         }
         else if ((endTime - startTime) >= 1000000 && (endTime - startTime) < 10000000000L)
         {
@@ -39,13 +39,13 @@ public class test
             final_runtime = (endTime - startTime) / 1000;
             final_runtime = final_runtime / 1000;
             System.out.println("算法运行时间： " + final_runtime + "毫秒");
-         }
+        }
         else
         {
-             double final_runtime;
-             final_runtime = (endTime - startTime) / 10000;
-             final_runtime = final_runtime / 100000;
-             System.out.println("算法运行时间： " + final_runtime + "秒");
+            double final_runtime;
+            final_runtime = (endTime - startTime) / 10000;
+            final_runtime = final_runtime / 100000;
+            System.out.println("算法运行时间： " + final_runtime + "秒");
         }
         Runtime r = Runtime.getRuntime();
         float memory;
